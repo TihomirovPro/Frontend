@@ -1,0 +1,37 @@
+include ../siteConfig.pug
+
+//------------------------------//
+
+include bemto/bemto
+include mixins/head
+include mixins/style
+include mixins/script
+
+//------------------------------//
+
+include ../blocks/menu/menu
+include ../blocks/btn/btn
+include ../blocks/form/form
+
+include ../blocks/header/header
+include ../blocks/footer/footer
+
+include ../blocks/breadcrumbs/breadcrumbs
+
+//------------------------------//
+
+block vars
+
+doctype html
+html(lang=lang)
+  head
+    +head()
+    block head
+
+  body(class=pageId)
+    block startBody
+
+    main.content
+      block content
+
+    block endBody

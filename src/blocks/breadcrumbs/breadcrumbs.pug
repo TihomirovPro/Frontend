@@ -1,0 +1,23 @@
+mixin breadcrumbs(data)
+	-var link = data.link || [{}]
+	+b.breadcrumbs(class=attributes.class)
+		+e.UL.list
+			+e.LI.item
+				+e.A.link(href='index.html') Главная
+			if data.link
+				each val in link
+					+e.LI.item
+						+e.SVG.arrow(width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+							path(fill='#000' d="M3.4575 4.5L2.97878 5.0625L5.28601e-05 8.2125L0.744734 9L5.00005 4.5L0.744733 3.72007e-07L5.2211e-05 0.7875L2.97878 3.9375L3.4575 4.5Z")
+						+e.A.link(href=val.href)= val.link
+			+e.LI.item
+				+e.SVG.arrow(width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+						path(fill='#000' d="M3.4575 4.5L2.97878 5.0625L5.28601e-05 8.2125L0.744734 9L5.00005 4.5L0.744733 3.72007e-07L5.2211e-05 0.7875L2.97878 3.9375L3.4575 4.5Z")
+				+e.SPAN.active!= data.page
+
+//- +b-breadcrumbs({
+//-   link: [
+//-     {href: '#', link: 'Ссылка'}
+//-   ],
+//-   page: 'страница'
+//- })

@@ -1,0 +1,25 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = '{{camelCase name}}'
+  - var description = '{{camelCase name}}'
+  - var pageId = '{{camelCase name}}Page'
+
+//--------------------------------------------------//
+
+block head
+  +style('{{camelCase name}}')
+
+block startBody
+  +header()
+ 
+block endBody
+  +footer()
+  +script('main')
+  //- +script('{{camelCase name}}')
+
+//--------------------------------------------------//
+
+block content

@@ -1,0 +1,15 @@
+include input/input
+include consent/consent
+include ajaxMessage/ajaxMessage
+
+mixin form(id, title, btn)
+  .formWrapper(id=id)
+    +b.FORM.form(class=attributes.class)
+      if title
+        +e.P.title!=title
+      +inputLabel({label: 'Имя или название организации *', type: 'text', name: 'name', placeholder: '', required: true, textarea: false})
+      +inputLabel({label: 'Контактный телефон *', type: 'text', name: 'phone', placeholder: '', required: true, textarea: false})
+      +inputLabel({label: 'Сообщение', type: 'text', name: 'text', placeholder: '', required: false, textarea: true})
+      +consent
+      +btn({type: 'submit', text: btn})
+    +ajaxMessage()
