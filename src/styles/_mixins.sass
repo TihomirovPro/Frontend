@@ -54,6 +54,13 @@ $mobileMin: 374px
   +media($from, $mobileMin)
     @content
 
+//===================__Font__====================//
+
+=font($size, $weight, $height)
+  font-size: $size
+  font-weight: $weight
+  line-height: $height
+
 //===================__Width & Height__====================//
 
 =size($a, $b: false )
@@ -105,6 +112,15 @@ $mobileMin: 374px
     width: 100%
     height: 100%
     z-index: 0
+
+=beforeAfter($a, $b, $bg)
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    +size($a, $b)
+    background-color: $bg 
+    @content
 
 =before($a, $b, $bg)
   &::before
