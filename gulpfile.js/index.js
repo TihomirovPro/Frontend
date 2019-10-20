@@ -22,18 +22,18 @@ function runWatchers (cb) {
     'src/blocks/**/*.sass',
     'src/styles/**/*.sass',
     'src/pages/**/*.sass'
-  ], series(buildStyles))
+  ], series(buildStyles, reloadServer))
 
   // static
   watch([
     'static/**/*'
-  ], series(copyStaticFiles))
+  ], series(copyStaticFiles, reloadServer))
 
   // images
   watch([
     'images/*.+(jpg|png|gif|svg)',
     'src/pages/**/*.+(jpg|png|gif|svg)'
-  ], series(optimizeImages))
+  ], series(optimizeImages, reloadServer))
   cb()
 }
 
