@@ -11,17 +11,16 @@ const { upload, uploadMin } = require('./upload')
 function runWatchers (cb) {
   // pug
   watch([
-    'src/siteConfig.pug',
     'src/pages/**/*.pug',
-    'src/layout/*.pug',
+    'src/layout/**/*.pug',
     'src/blocks/**/*.pug'
   ], series(buildMarkup, reloadServer))
 
   // styles
   watch([
-    'src/blocks/**/*.sass',
-    'src/styles/**/*.sass',
-    'src/pages/**/*.sass'
+    'src/blocks/**/*.+(sass|scss)',
+    'src/styles/**/*.+(sass|scss)',
+    'src/pages/**/*.+(sass|scss)'
   ], series(buildStyles, reloadServer))
 
   // static
@@ -31,7 +30,7 @@ function runWatchers (cb) {
 
   // images
   watch([
-    'images/*.+(jpg|png|gif|svg)',
+    'images/**/*.+(jpg|png|gif|svg)',
     'src/pages/**/*.+(jpg|png|gif|svg)'
   ], series(optimizeImages, reloadServer))
   cb()

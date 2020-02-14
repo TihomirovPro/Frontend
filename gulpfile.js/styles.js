@@ -1,5 +1,6 @@
 const { src, dest } = require('gulp')
 const sass = require('gulp-sass')
+sass.compiler = require('sass')
 const sassGlob = require('gulp-sass-glob')
 const autoprefixer = require('gulp-autoprefixer')
 const combineMq = require('gulp-group-css-media-queries')
@@ -11,9 +12,8 @@ const gulpif = require('gulp-if')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-// styles
 function buildStyles (cb) {
-  return src(['src/styles/main.sass', 'src/pages/*/*.sass'])
+  return src(['src/styles/*.+(sass|scss)', 'src/pages/*/*.+(sass|scss)'])
     .pipe(sassGlob())
     .pipe(toaster('Sass', cb))
     .pipe(gulpif(isDevelopment, sourcemaps.init()))
