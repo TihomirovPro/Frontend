@@ -6,13 +6,13 @@ module.exports = function () {
     prompts: [
       {
         type: 'input',
-        name: 'page',
+        name: 'input page name',
         message: 'page\'s name',
         validate: isntEmptyName
       },
       {
         type: 'input',
-        name: 'name',
+        name: 'input section name',
         message: 'Section\'s name',
         validate: isntEmptyName
       }
@@ -24,14 +24,14 @@ module.exports = function () {
       // pug
       actions.push({
         type: 'add',
-        path: '../../src/pages/{{camelCase page}}/{{camelCase name}}/{{camelCase name}}.pug',
+        path: '../../src/pages/{{dashCase page}}/{{dashCase name}}/{{dashCase name}}.pug',
         templateFile: './section/section.pug'
       })
 
       // sass
       actions.push({
         type: 'add',
-        path: '../../src/pages/{{camelCase page}}/{{camelCase name}}/{{camelCase name}}.sass',
+        path: '../../src/pages/{{dashCase page}}/{{dashCase name}}/{{dashCase name}}.sass',
         templateFile: './section/section.sass'
       })
 

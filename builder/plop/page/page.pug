@@ -3,14 +3,13 @@ extends ../../layout/page
 //--------------------------------------------------//
 
 block vars
-  - var title = '{{camelCase name}}'
-  - var description = '{{camelCase name}}'
-  - var pageId = '{{camelCase name}}Page'
+  - var title = '{{dashCase name}}'
+  - var description = '{{dashCase name}}'
 
 //--------------------------------------------------//
 
 block head
-  +style('{{camelCase name}}')
+  +style('{{dashCase name}}')
 
 block startBody
   +header()
@@ -18,8 +17,9 @@ block startBody
 block endBody
   +footer()
   +script('main')
-  //- +script('{{camelCase name}}')
+  //- +script('{{dashCase name}}')
 
 //--------------------------------------------------//
 
 block content
+
