@@ -6,23 +6,18 @@
     @media only screen and (max-width: $from) and (min-width: $to)
       @content
 
-//===================_Desktop_====================//
-  
-$desktopMin: 1200px
+// ===================_Desktop_====================//
 
-=desktop($val: min)
-  +media($val, $bp-desktop-min)
-    @content
+$desktoplg: 1201px
+$desktopMax: 1200px
+$desktopMin: 992px
 
-//===================_Desktop-sm_====================//
-
-$desktopSmMax: 1050px
-$desktopSmMid: 1024px
-$desktopSmMin: 992px
-
-=desktopSm($from: $desktopSmMax, $to: $desktopSmMin)
-  @if $from == max or $from == min
-    +media($from, $desktopSmMax)
+=desktop($from: $desktopMax, $to: $desktopMin)
+  @if $from == max
+    +media($from, $desktopMax)
+      @content
+  @else if $from == min
+    +media($from, $desktoplg)
       @content
   @else
     +media($from, $to)
@@ -34,8 +29,27 @@ $tabletMax: 991px
 $tabletMin: 768px
 
 =tablet($from: $tabletMax, $to: $tabletMin)
-  @if $from == max or $from == min
+  @if $from == max
     +media($from, $tabletMax)
+      @content
+  @else if $from == min
+    +media($from, $desktopMin)
+      @content
+  @else
+    +media($from, $to)
+      @content
+
+//===================__tabMd__====================//
+
+$tabMdMax: 767px
+$tabMdMin: 576px
+
+=tabMd($from: $tabMdMax, $to: $tabMdMin)
+  @if $from == max
+    +media($from, $tabMdMax)
+      @content
+  @else if $from == min
+    +media($from, $tabletMin)
       @content
   @else
     +media($from, $to)
@@ -43,16 +57,15 @@ $tabletMin: 768px
 
 //===================__Mobile__====================//
 
-$mobileMax: 767px
-$mobileMin: 374px
+$mobileMax: 575px
 
 =mobile($from: max)
-  +media($from, $mobileMax)
-    @content
-
-=mobileSm($from: max)
-  +media($from, $mobileMin)
-    @content
+  @if $from == max
+    +media($from, $mobileMax)
+      @content
+  @else if $from == min
+    +media($from, $tabMdMin)
+      @content
 
 //===================__Font__====================//
 
@@ -63,12 +76,35 @@ $mobileMin: 374px
 
 //===================__Width & Height__====================//
 
-=size($a, $b: false )
-	width: $a
-	@if $b
-		height: $b
-	@else
-		height: $a
+=size($width, $height: $width)
+  width: $width
+  height: $height
+
+//====================__triangle__====================//
+
+=triangle($direction, $width, $height: $width, $color)
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    +size(0)
+    @if ($direction == 'up')
+      border-bottom: $width solid $color
+      border-left: 1/2*$height solid transparent
+      border-right: 1/2*$height solid transparent
+    @else if ($direction == 'down')
+      border-top: $width solid $color
+      border-left: 1/2*$height solid transparent
+      border-right: 1/2*$height solid transparent
+    @else if ($direction == 'left')
+      border-right: $width solid $color
+      border-top: 1/2*$height solid transparent
+      border-bottom: 1/2*$height solid transparent
+    @else if ($direction == 'right')
+      border-left: $width solid $color
+      border-top: 1/2*$height solid transparent
+      border-bottom: 1/2*$height solid transparent
+    @content
 
 //===================__Flexbox__====================//
 
@@ -79,70 +115,88 @@ $mobileMin: 374px
     justify-content: center
     align-items: center
 
-  @elseif $flex == 'between'
+  @else if $flex == 'between'
     justify-content: space-between
 
-  @elseif $flex == 'between-center'
+  @else if $flex == 'between-center'
     justify-content: space-between
     align-items: center
 
-  @elseif $flex == 'between-wrap'
+  @else if $flex == 'between-wrap'
     justify-content: space-between
     flex-wrap: wrap
 
-  @elseif $flex == 'between-center-wrap'
+  @else if $flex == 'between-center-wrap'
     justify-content: space-between
     align-items: center
     flex-wrap: wrap
 
-  @elseif $flex == 'around'
+  @else if $flex == 'around'
     justify-content: space-around
 
-//===================__Pseudo background__====================//
+//===================__Pseudo elements__====================//
 
-=pseudoBackground($opacity, $background)
-	&::before
+=before($bg, $width, $height: $width)
+  &::before
     content: ''
     display: block
     position: absolute
-    background: $background
-    opacity: $opacity
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    z-index: 0
+    +size($width, $height)
+    background: $bg
+    @content
+    
 
-=beforeAfter($a, $b, $bg)
+=after($bg, $width, $height: $width)
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    +size($width, $height)
+    background: $bg
+    @content
+
+=beforeAfter($bg, $width, $height: $width)
   &::before,
   &::after
     content: ''
+    display: block
     position: absolute
-    +size($a, $b)
-    background-color: $bg 
+    +size($width, $height)
+    background: $bg
     @content
 
-=before($a, $b, $bg)
+=pseudoBg($bg)
   &::before
+    top: 0
+    left: 0
+    z-index: 0
     content: ''
+    display: block
     position: absolute
-    +size($a, $b)
-    background-color: $bg 
+    +size(100%)
+    background: $bg
     @content
 
-=after($a, $b, $bg)
-  &::after
-    content: ''
-    position: absolute
-    +size($a, $b)
-    background-color: $bg 
-    @content
+//===================__position__====================//
 
-=bgImg($img, $size, $position)
-  background-image: url(../img/#{$img})
-  background-size: $size
-  background-position: $position
-  background-repeat: no-repeat
+=centerY
+  top: 50%
+  transform: translateY(-50%)
+
+=centerX
+  left: 50%
+  transform: translateX(-50%)
+
+=center
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+//===================__hover__====================//
+
+=hover
+  &:hover
+    @content
 
 //===================__Placeholder__====================//
 
@@ -163,11 +217,11 @@ $mobileMin: 374px
 //===================__Keyframes__====================//
 
 =keyframes($name)
-	@-webkit-keyframes #{$name}
-		@content
-	@-moz-keyframes #{$name}
-		@content
-	@-ms-keyframes #{$name}
-		@content
-	@keyframes #{$name}
-		@content
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content

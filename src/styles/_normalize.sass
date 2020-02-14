@@ -12,18 +12,6 @@
     background: 0
 
 html,
-body
-  display: block
-  width: 100%
-  font-family: $fontMain
-  font-size: $fontSize
-  font-weight: normal
-  color: $colorText
-  line-height: 1.15
-  -webkit-text-size-adjust: 100%
-  background-color: $colorTheme
-  text-rendering: optimizeLegibility
-
 header,
 nav,
 main,
@@ -31,6 +19,18 @@ section,
 footer,
 label
   display: block
+
+html,
+body
+  width: 100%
+  font-weight: normal
+  font-family: $fontMain
+  font-size: $fontSize
+  color: $colorText
+  line-height: $lineHeight
+  background-color: $colorTheme
+  -webkit-text-size-adjust: 100%
+  text-rendering: optimizeLegibility
 
 a
   background-color: transparent
@@ -42,27 +42,11 @@ ul
 
 img
   border-style: none
-
-button,
-input,
-optgroup,
-select,
-textarea
-  font-family: inherit
-  font-size: 100%
-  line-height: 1.15
-  border: none
-  border-radius: 0
-  box-shadow: none
-  background-color: transparent
-  font: inherit
-  color: inherit
-  letter-spacing: inherit
-  &:focus
-    outline: none
+  vertical-align: middle
 
 textarea
   overflow: auto
+  max-width: 100%
 
 button,
 input
@@ -79,10 +63,62 @@ button,
   cursor: pointer
   -webkit-appearance: button
 
-::-webkit-file-upload-button
-  -webkit-appearance: button
+button,
+input,
+optgroup,
+select,
+textarea
   font: inherit
+  font-size: $fontSize
+  font-family: inherit
+  letter-spacing: inherit
+  color: inherit
+  line-height: $lineHeight
+  border: none
+  border-radius: 0
+  box-shadow: none
+  background-color: transparent
+  &:focus
+    outline: none
+
+::-webkit-file-upload-button
+  font: inherit
+  -webkit-appearance: button
 
 b,
 strong
   font-weight: bold
+
+//====================__base__====================//
+
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+.page-content
+  flex: 1 0 auto
+
+.footer
+  flex: 0 0 auto
+
+.wrapper
+  padding-right: $padding
+  padding-left: $padding
+  +desktop(min)
+    padding-right: $wrapperLg
+    padding-left: $wrapperLg
+  +desktop
+    padding-right: $wrapperMd
+    padding-left: $wrapperMd
+  +tablet
+    padding-right: $wrapperTab
+    padding-left: $wrapperTab
+  +tabMd
+    padding-right: $wrapperMob
+    padding-left: $wrapperMob
+
+.img
+  +size(100%)
+  object-fit: cover
+  vertical-align: middle
