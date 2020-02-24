@@ -6,13 +6,13 @@ module.exports = function () {
     prompts: [
       {
         type: 'input',
-        name: 'input page name',
+        name: 'page',
         message: 'page\'s name',
         validate: isntEmptyName
       },
       {
         type: 'input',
-        name: 'input section name',
+        name: 'name',
         message: 'Section\'s name',
         validate: isntEmptyName
       }
