@@ -1,0 +1,66 @@
+.select
+  position: relative
+  width: 100%
+  color: #999
+  border: 1px solid #e1e6eb
+  +before(transparent,0)
+    border-left: 5px solid transparent
+    border-right: 5px solid transparent
+    border-top: 5px solid
+    right: 12px
+    top: 50%
+    transition: $transition
+    transform-origin: 50% 50% 0
+    transform: translateY(-50%)
+  &.open
+    color: #212529
+    &:before
+      transform: rotate(90deg)
+
+  &__checked
+    cursor: pointer
+    font-size: 13px
+    padding: 8px 16px
+
+  &__options
+    position: absolute
+    z-index: 1
+    left: -1px
+    width: calc(100% + 2px)
+    top: 36px
+    transition: $transition
+    overflow: hidden
+    background: #fff
+    border: 1px solid #e1e6eb
+    border-top: 0
+    border-bottom: 1px solid #e1e6eb
+
+  &__group
+    //
+
+  &__group-title
+    font-size: 14px
+    font-weight: 700
+    color: #6c757d
+    padding: 8px 15px
+    
+  &__option
+    position: relative
+    cursor: pointer
+    width: 100%
+    font-size: 13px
+    background: #fff
+    transition: $transition
+    >input
+      position: absolute
+      transform: scale(0)
+      &:checked + .select__text
+        color: #fff
+        background: $colorMain
+
+  &__text
+    padding: 5px 15px
+    background: #fff
+    transition: $transition
+    &:hover
+      background: #f2f2f4
