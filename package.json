@@ -26,12 +26,12 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.2",
     "del": "^5.1.0",
-    "eslint": "^6.6.0",
+    "eslint": "^7.9.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "gulp": "^4.0.2",
@@ -47,10 +47,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-svg-sprite": "^1.5.0",
     "gulp-util": "^3.0.8",
-    "imagemin-pngquant": "^8.0.0",
-    "node-notifier": "^6.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "node-notifier": "^8.0.0",
     "plop": "^2.5.4",
     "sass": "^1.26.2",
     "vinyl-ftp": "^0.6.1",
@@ -58,12 +57,12 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^4.2.2",
-    "webpack-stream": "^5.2.1",
+    "webpack-merge": "^5.1.4",
+    "webpack-stream": "^6.1.0",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "swiper": "^5.3.6"
+    "swiper": "^6.2.0"
   }
 }
