@@ -21,19 +21,19 @@
     "tasks": "node node_modules/gulp/bin/gulp.js --tasks"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
-    "@babel/preset-env": "^7.8.6",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
-    "eslint": "^7.9.0",
+    "eslint": "^7.11.0",
     "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
@@ -51,18 +51,18 @@
     "imagemin-pngquant": "^9.0.1",
     "node-notifier": "^8.0.0",
     "plop": "^2.5.4",
-    "sass": "^1.26.2",
+    "sass": "^1.27.0",
     "vinyl-ftp": "^0.6.1",
-    "webpack": "^4.42.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^5.1.4",
+    "webpack-merge": "^5.2.0",
     "webpack-stream": "^6.1.0",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "swiper": "^6.2.0"
+    "swiper": "^6.3.4"
   }
 }
