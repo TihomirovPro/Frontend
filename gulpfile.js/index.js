@@ -13,14 +13,16 @@ function runWatchers (cb) {
   watch([
     'src/pages/**/*.pug',
     'src/layout/**/*.pug',
-    'src/blocks/**/*.pug'
+    'src/blocks/**/*.pug',
+    'src/sections/**/*.pug'
   ], series(buildMarkup, reloadServer))
 
   // styles
   watch([
     'src/blocks/**/*.+(sass|scss)',
     'src/styles/**/*.+(sass|scss)',
-    'src/pages/**/*.+(sass|scss)'
+    'src/pages/**/*.+(sass|scss)',
+    'src/sections/**/*.+(sass|scss)'
   ], series(buildStyles, reloadServer))
 
   // static
