@@ -5,7 +5,7 @@ module.exports = function () {
     description: 'Create a new block',
     prompts: [{
       type: 'input',
-      name: 'input block name',
+      name: 'name',
       message: 'Block\'s name',
       validate: isntEmptyName
     }],
@@ -16,14 +16,14 @@ module.exports = function () {
       // pug
       actions.push({
         type: 'add',
-        path: '../../src/blocks/{{dashCase name}}/{{dashCase name}}.pug',
+        path: '../../src/blocks/b-{{dashCase name}}/b-{{dashCase name}}.pug',
         templateFile: './block/block.pug'
       })
 
       // styl
       actions.push({
         type: 'add',
-        path: '../../src/blocks/{{dashCase name}}/{{dashCase name}}.sass',
+        path: '../../src/blocks/b-{{dashCase name}}/b-{{dashCase name}}.sass',
         templateFile: './block/block.sass'
       })
 

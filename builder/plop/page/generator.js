@@ -5,7 +5,7 @@ module.exports = function () {
     description: 'Create a new page',
     prompts: [{
       type: 'input',
-      name: 'Input name page',
+      name: 'name',
       message: 'Page\'s name',
       validate: isntEmptyName
     }],

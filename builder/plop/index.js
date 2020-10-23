@@ -1,5 +1,6 @@
 module.exports = function (plop) {
-  plop.setGenerator('block', require('./block/generator.js')())
-  plop.setGenerator('page', require('./page/generator.js')())
-  plop.setGenerator('section', require('./section/generator.js')())
+  plop.setGenerator('Block', require('./block/generator.js')())
+  plop.setGenerator('Page', require('./page/generator.js')())
+  plop.setGenerator('Section', require('./section/generator.js')())
+  plop.setGenerator('Js', require('./js/generator.js')())
 }
