@@ -1,16 +1,16 @@
-.columns2,
-.columns3,
-.columns4
+.grid
   display: grid
   grid-column-gap: 30px
+  grid-row-gap: 30px
   +mobile
     grid-column-gap: 15px
+    grid-row-gap: 15px
 
-.columns2
+.col2
   grid-template-columns: 1fr 1fr
 
-.columns3
+.col3
   grid-template-columns: repeat(3, 1fr)
 
-.columns4
+.col4
   grid-template-columns: repeat(4, 1fr)
