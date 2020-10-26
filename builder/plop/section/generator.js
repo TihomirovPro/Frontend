@@ -16,14 +16,14 @@ module.exports = function () {
       // pug
       actions.push({
         type: 'add',
-        path: '../../src/pages/sections/s-{{dashCase name}}/s-{{dashCase name}}.pug',
+        path: '../../src/sections/s-{{dashCase name}}/s-{{dashCase name}}.pug',
         templateFile: './section/section.pug'
       })
 
       // sass
       actions.push({
         type: 'add',
-        path: '../../src/pages/sections/s-{{dashCase name}}/s-{{dashCase name}}.sass',
+        path: '../../src/sections/s-{{dashCase name}}/s-{{dashCase name}}.sass',
         templateFile: './section/section.sass'
       })
 
