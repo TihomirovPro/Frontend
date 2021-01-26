@@ -12,15 +12,6 @@
     background: 0
 
 html,
-header,
-nav,
-main,
-section,
-footer,
-label
-  display: block
-
-html,
 body
   width: 100%
   font-weight: normal
@@ -88,37 +79,3 @@ textarea
 b,
 strong
   font-weight: bold
-
-//====================__base__====================//
-
-body
-  display: flex
-  flex-direction: column
-  min-height: 100vh
-
-.layout
-  flex: 1 0 auto
-
-.footer
-  flex: 0 0 auto
-
-.wrapper
-  padding-right: $padding
-  padding-left: $padding
-  +desktop(min)
-    padding-right: $wrapperLg
-    padding-left: $wrapperLg
-  +desktop
-    padding-right: $wrapperMd
-    padding-left: $wrapperMd
-  +tablet
-    padding-right: $wrapperTab
-    padding-left: $wrapperTab
-  +tabMd
-    padding-right: $wrapperMob
-    padding-left: $wrapperMob
-
-.img
-  +size(100%)
-  object-fit: cover
-  vertical-align: middle

@@ -1,5 +1,5 @@
 mixin breadcrumbs(data)
-	-var link = data.link || [{}]
+	- const link = data.link || [{}]
 	+b.breadcrumbs(class=attributes.class)
 		+e.UL.list
 			+e.LI.item

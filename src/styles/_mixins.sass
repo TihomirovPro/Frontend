@@ -80,6 +80,10 @@ $mobileMax: 575px
   width: $width
   height: $height
 
+=ptb($top, $bottom: $top)
+  padding-top: $top
+  padding-bottom: $bottom
+
 //====================__triangle__====================//
 
 =triangle($direction, $width, $height: $width, $color)
@@ -195,6 +199,7 @@ $mobileMax: 575px
 //===================__hover__====================//
 
 =hover
+  transition: $transition
   &:hover
     @content
 

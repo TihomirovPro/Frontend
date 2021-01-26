@@ -1,3 +1,3 @@
-import './utils/fixForEach'
-
-document.addEventListener('DOMContentLoaded', () => {})
+document.addEventListener('DOMContentLoaded', () => {
+  // -
+})

@@ -1,21 +1,15 @@
-mixin btn(data)
-  if data.link
-    if data.download
-      +e.A.btn.btn(class=attributes.class href=data.href download)!= data.text
-    else if data.target
-      +e.A.btn.btn(class=attributes.class href=data.href target=data.target)!= data.text
+mixin btn(text)
+  button.btn&attributes(attributes)
+    block
+    if block
+      span.btn__text!=text
     else
-      +e.A.btn.btn(class=attributes.class href=data.href)!= data.text
-  else
-    if data.modal
-      +e.BUTTON.btn.btn(class=attributes.class type=data.type data-modal=data.modal)!= data.text
-    else
-      +e.BUTTON.btn.btn(class=attributes.class type=data.type data-modal=data.modal)!= data.text
+      !=text
 
-//- +btn({
-//-   link: false, // true = <a>, false = <button>
-//-   download: false, // download file
-//-   href: false, // if link: true 
-//-   type: false, // if link: false { button, submit }
-//-   text: 'кнопка'
-//- })
+mixin btnLink(href, text)
+  a.btn(href=href)&attributes(attributes)
+    block
+    if block
+      span.btn__text!=text
+    else
+      !=text

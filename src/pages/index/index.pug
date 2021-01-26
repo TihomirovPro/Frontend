@@ -3,8 +3,9 @@ extends ../../layout/page
 //--------------------------------------------------//
 
 block vars
-  - var title = 'index'
-  - var description = 'index'
+  -
+    const title = 'index'
+    const description = 'index'
 
 //--------------------------------------------------//
 
@@ -12,13 +13,15 @@ block head
   +style('index')
 
 block startBody
-  +header()
- 
 block endBody
-  +footer()
-  +script('main')
-  //- +script('index')
+block scripts
+
 
 //--------------------------------------------------//
 
 block content
+  .wrapper
+    +btn('Модалка')(data-modal="modal")
+
+    #modal
+      p 1234

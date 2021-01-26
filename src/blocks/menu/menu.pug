@@ -2,5 +2,77 @@ mixin menu(menu)
   +b.NAV.menu
     +e.UL.list
       each link in menu
+        if link.submenu
+          +e.LI.item
+            if link.href
+              +e.A.link(href=link.href)!= link.text
+            else
+              +e.SPAN.link!=link.text
+            +subMenu(link.submenu)
+        else
+          +e.LI.item
+            +e.A.link(href=link.href)!= link.text
+
+mixin subMenu(data)
+  +e.UL.sub-menu
+    each link in data
+      if link.submenu
         +e.LI.item
-          +e.A.link(href=link.href)!= link.text
+          if link.href
+            +e.A.link(href=link.href)!= link.text
+          else
+            +e.SPAN.link!=link.text
+          +subMenu(link.submenu)
+      else
+        +e.LI.item
+          +e.A.link(href=link.href)!=link.text
+
+//- Examples
+//--------------------------------------------------
+
+mixin initMenu()
+  +menu([
+    { text: 'О нас', href: '#' },
+    { text: 'Портфолио', href: '#' },
+    { text: 'Контакты', href: '#' }
+  ])
+
+mixin initMenuSubmenu()
+  +menu([
+    { text: 'О нас', href: '#' },
+    
+    {
+      text: 'Портфолио',
+      href: '#',
+      submenu: [
+        { text: 'Подменю1', href: '#' },
+        { text: 'Подменю2', href: '#' },
+        { text: 'Подменю3', href: '#' }
+      ]
+    },
+
+    { text: 'Контакты', href: '#' }
+  ])
+
+mixin initMenuSubmenuSubmenu()
+  +menu([
+    { text: 'О нас', href: '#' },
+    {
+      text: 'Портфолио',
+      href: '#',
+      submenu: [
+        { text: 'Подменю1', href: '#' },
+        { text: 'Подменю2', href: '#' },
+        {
+          text: 'Подменю3',
+          href: '#',
+          submenu: [
+            { text: 'ПодПодменю1', href: '#' },
+            { text: 'ПодПодменю2', href: '#' },
+            { text: 'ПодПодменю3', href: '#' }
+          ]
+        }
+      ]
+    },
+    { text: 'Контакты', href: '#' }
+  ])

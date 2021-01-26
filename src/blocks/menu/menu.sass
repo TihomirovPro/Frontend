@@ -1,2 +1,36 @@
 .menu
-  //
+  display: flex
+
+  &__list
+    display: grid
+    grid-auto-flow: column
+    column-gap: 30px
+
+  &__item
+    position: relative
+
+  &__link
+    display: block
+    transition: $transition
+
+    .menu__item:hover > &
+      color: $white
+
+// submenu
+//--------------------------------------------------
+
+.menu__sub-menu
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  top: 100%
+  left: 0
+  transition: $transition
+
+  .menu__item:hover > &
+    opacity: 1
+    visibility: visible
+
+  .menu__sub-menu
+    top: 0
+    left: 100%

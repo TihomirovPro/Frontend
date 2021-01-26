@@ -4,11 +4,12 @@ include ../sections/sections
 +blocks
 +sections
 
-//--------------------__content__--------------------//
+//--------------------------------------------------//
 
 block vars
-
 - const lang = 'ru'
+
+//--------------------------------------------------//
 
 doctype html
 html(lang=lang)
@@ -16,11 +17,16 @@ html(lang=lang)
     +head
     block head
 
-  body
+  body(class=pageName)
     block startBody
+    +header()
 
     .layout
       main.content
         block content
 
+    +footer()
     block endBody
+
+    +script('main')
+    block scripts

@@ -1,4 +1,4 @@
-var isntEmptyName = require('../utils/isnt_empty')
+const isntEmptyName = require('../utils/isnt_empty')
 
 module.exports = function () {
   return {
@@ -11,7 +11,7 @@ module.exports = function () {
     }],
 
     actions: function () {
-      var actions = []
+      const actions = []
 
       // js
       actions.push({

@@ -1,66 +1,63 @@
-.select
+.custom-select
+  cursor: pointer
   position: relative
-  width: 100%
-  color: #999
-  border: 1px solid #e1e6eb
-  +before(transparent,0)
-    border-left: 5px solid transparent
-    border-right: 5px solid transparent
-    border-top: 5px solid
-    right: 12px
-    top: 50%
-    transition: $transition
-    transform-origin: 50% 50% 0
-    transform: translateY(-50%)
-  &.open
-    color: #212529
-    &:before
-      transform: rotate(90deg)
+  width: 500px
+  border: 1px solid rgba(38, 38, 38, 0.2)
+  border-radius: 20px
+  transition: $transition
+  
+  &._open
+    border-radius: 20px 20px 0 0
 
-  &__checked
-    cursor: pointer
-    font-size: 13px
-    padding: 8px 16px
+  &__label
+    pointer-events: none
+    font-size: 12px
+    padding: 11px 32px 11px 20px
+
+  &__icon
+    position: absolute
+    right: 12px
+    top: 13px
+    +size(12px)
+    transform: rotate(180deg)
+    transition: $transition
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.99794 9.24383L0 0.489374L0.164002 0.25C1.80361 2.53245 3.91198 3.6684 6.00206 3.65055C8.09079 3.66687 10.1975 2.5311 11.836 0.250149L12 0.489523L6.00206 9.24398V9.24985L6.00005 9.24692L5.99794 9.25V9.24383Z' fill='%23262626'/%3E%3C/svg%3E%0A")
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    
+    .custom-select:not(._open) &
+      transform: rotate(0deg)
 
   &__options
+    opacity: 1
+    z-index: 50
     position: absolute
-    z-index: 1
     left: -1px
     width: calc(100% + 2px)
     top: 36px
     transition: $transition
     overflow: hidden
     background: #fff
-    border: 1px solid #e1e6eb
+    border: 1px solid rgba(38, 38, 38, 0.2)
     border-top: 0
-    border-bottom: 1px solid #e1e6eb
-
-  &__group
-    //
-
-  &__group-title
-    font-size: 14px
-    font-weight: 700
-    color: #6c757d
-    padding: 8px 15px
+    border-bottom: 1px solid rgba(38, 38, 38, 0.2)
+    border-radius: 0px 0px 20px 20px
+  
+    .custom-select:not(._open) &
+      opacity: 0
+      z-index: -1
     
   &__option
     position: relative
     cursor: pointer
     width: 100%
-    font-size: 13px
+    font-size: 12px
     background: #fff
     transition: $transition
-    >input
-      position: absolute
-      transform: scale(0)
-      &:checked + .select__text
-        color: #fff
-        background: $colorMain
+    padding: 11px 32px 11px 20px
+    background: #fff
+    border-top: 1px solid rgba(38, 38, 38, 0.2)
 
-  &__text
-    padding: 5px 15px
-    background: #fff
-    transition: $transition
     &:hover
-      background: #f2f2f4
+      background: #F5F1EA

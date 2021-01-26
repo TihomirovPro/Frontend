@@ -3,9 +3,10 @@ extends ../../layout/page
 //--------------------------------------------------//
 
 block vars
-  - var title = '{{dashCase name}}'
-  - var description = '{{dashCase name}}'
-  - var pageClass = '{{dashCase name}}-page'
+  -
+    const title = '{{dashCase name}}'
+    const description = '{{dashCase name}}'
+    const pageClass = 'p-{{dashCase name}}'
 
 //--------------------------------------------------//
 
@@ -13,12 +14,8 @@ block head
   +style('{{dashCase name}}')
 
 block startBody
-  +header()
- 
 block endBody
-  +footer()
-  +script('main')
-  //- +script('{{dashCase name}}')
+block scripts
 
 //--------------------------------------------------//
 
