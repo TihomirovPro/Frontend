@@ -1,0 +1,65 @@
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  +size(100%)
+  z-index: 999
+  display: none
+  padding: 40px 0
+  text-align: center
+  overflow: hidden auto
+  background-color: rgba(0,0,0,.5)
+
+  &:before
+    content: ''
+    height: 100%
+    display: inline-block
+    vertical-align: middle
+
+  &__container
+    display: inline-block
+    vertical-align: middle
+
+  &__close
+    position: absolute
+    top: 40px
+    right: 40px
+    +size(30px)
+  
+    &:after,&:before
+      position: absolute
+      content: ''
+      left: 0
+      +size(100%,2px)
+      background: #fff
+      transform: rotate(45deg)
+
+    &:before
+      transform: rotate(-45deg)
+    
+
+//---------- scrollbarMeasure ----------//
+
+.scrollbarMeasure
+  +size(50px)
+  overflow-y: scroll
+  visibility: hidden
+
+//---------- Animation ----------//
+
+.fadeIn
+  animation: fadeIn .5s
+.fadeOut
+  animation: fadeOut .5s
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
