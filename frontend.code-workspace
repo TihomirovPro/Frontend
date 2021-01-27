@@ -1,0 +1,28 @@
+{
+	"folders": [
+    {
+      "name": "frontend",
+      "path": "."
+    },
+    {
+      "name": "pages",
+      "path": "src/pages"
+    },
+    {
+      "name": "blocks",
+      "path": "src/blocks"
+    },
+    {
+      "name": "sections",
+      "path": "src/sections"
+    },
+    {
+      "name": "js",
+      "path": "src/js"
+    },
+    {
+      "name": "styles",
+      "path": "src/styles"
+    }
+  ]
+}
