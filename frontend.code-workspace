@@ -24,5 +24,12 @@
       "name": "styles",
       "path": "src/styles"
     }
-  ]
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "stylelint.snippet": [
+      "sass"
+    ],
+    "stylelint.syntax": "sass"
+  }
 }
