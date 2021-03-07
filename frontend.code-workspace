@@ -27,9 +27,16 @@
   ],
   "settings": {
     "editor.tabSize": 2,
+    "stylelint.syntax": "sass",
     "stylelint.snippet": [
       "sass"
     ],
-    "stylelint.syntax": "sass"
+    "stylelint.validate": [
+      "css",
+      "html",
+      "javascript",
+      "markdown",
+      "sass",
+    ]
   }
 }
