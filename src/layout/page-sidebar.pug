@@ -21,9 +21,13 @@ html(lang=lang)
     block startBody
     +header()
 
-    main.layout
-      block content
-      
+    .layout
+      main.content
+        block content
+
+      aside.sidebar
+        block sidebar
+
     +footer()
     block endBody
 
