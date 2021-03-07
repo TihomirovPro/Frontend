@@ -40,10 +40,6 @@
       "sass"
     ],
     "stylelint.validate": [
-      "css",
-      "html",
-      "javascript",
-      "markdown",
       "sass",
     ]
   }

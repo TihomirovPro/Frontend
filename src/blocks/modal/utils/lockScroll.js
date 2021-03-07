@@ -38,13 +38,11 @@ function fixScrollBarWidth (fix) {
   const body = document.querySelector('body')
   const ScrollbarWidth = getScrollbarWidth()
 
-  if (isScroll('height', 'body')) {
-    if (fix) {
-      body.style.paddingRight = `${ScrollbarWidth}px`
-    } else {
-      body.style.paddingRight = 0
-    }
+  if (isScroll('height', 'body') && fix) {
+    body.style.paddingRight = `${ScrollbarWidth}px`
+    return
   }
+  body.style.paddingRight = 0
 }
 
 export default lockScroll
