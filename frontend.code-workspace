@@ -23,7 +23,15 @@
     {
       "name": "styles",
       "path": "src/styles"
-    }
+    },
+    {
+      "name": "images",
+      "path": "./images"
+    },
+    {
+      "name": "static",
+      "path": "./static"
+    },
   ],
   "settings": {
     "editor.tabSize": 2,
