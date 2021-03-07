@@ -1,16 +1,15 @@
 import closeModal from './utils/closeModal'
 import createModal from './utils/createModal'
 import lockScroll from './utils/lockScroll'
+import createModalStyles from './utils/modalStyles'
 import openModal from './utils/openModal'
 
 const modal = (options = {
-  openerSelector: '.modalJs',
-  modalBackground: null,
+  modalBackground: 'rgba(0,0,0,.5)',
   maxWidthContent: '80%'
 }) => {
-  const openerSelector = options.openerSelector
-
-  const openers = document.querySelectorAll(openerSelector)
+  createModalStyles(options)
+  const openers = document.querySelectorAll('[data-modal]')
 
   openers.forEach(item => {
     item.addEventListener('click', () => {
