@@ -1,5 +1,5 @@
-// import modal from './modules/modal/modal'
+import Swiper from 'swiper/bundle'
 
 document.addEventListener('DOMContentLoaded', () => {
-  // modal()
+  //
 })

@@ -3,6 +3,7 @@ const openModal = (modalWrap, modal) => {
   container.appendChild(modal)
 
   modalWrap.style.display = 'block'
+  modal.style.display = 'block'
   modalWrap.classList.add('fadeIn')
 }
 

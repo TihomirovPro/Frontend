@@ -5,7 +5,9 @@ const path = require('path')
 //
 
 const entries = {
-  'js/main': './src/js/main.js'
+  'js/main': './src/js/main.js',
+  'js/swiper': './src/js/swiper.js',
+  'js/aos': './src/js/aos.js'
 }
 
 exports.baseEntry = entries
