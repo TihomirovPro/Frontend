@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "layout",
+      "path": "src/layout"
+    },
+    {
       "name": "pages",
       "path": "src/pages"
     },

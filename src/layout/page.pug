@@ -17,7 +17,7 @@ html(lang=lang)
     +head
     block head
 
-  body(class=pageName)
+  body(class=pageClass)
     block startBody
     +header()
 
@@ -25,7 +25,6 @@ html(lang=lang)
       block content
       
     +footer()
-    block endBody
 
     +script('main')
-    block scripts
+    block endBody

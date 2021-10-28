@@ -4,7 +4,12 @@ mixin head
   meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
   title=title
-  meta(name="description" content=description)
+
+  if description
+    meta(name="description" content=description)
+
+  if keywords
+    meta(name="keywords" content=keywords)
 
   //------------------------------ favicon ------------------------------//
 
@@ -14,17 +19,14 @@ mixin head
 
   //------------------------------ Open graph ------------------------------//
 
-  //- meta(name="description" content= description)
-  //- meta(name="keywords" content= keywords)
+  //- meta(property="og:title" content=og_title)
+  //- meta(property="og:locale" content=og_locale)
+  //- meta(property="og:site_name" content=og_site_name)
+  //- meta(property="og:description" content=og_description)
 
-  //- meta(property="og:title" content= og_title)
-  //- meta(property="og:locale" content= og_locale)
-  //- meta(property="og:site_name" content= og_site_name)
-  //- meta(property="og:description" content= og_description)
-
-  //- meta(property="og:type" content= og_type)
-  //- meta(property="og:url" content= og_url)
-  //- meta(property="og:image" content= og_image)
+  //- meta(property="og:type" content=og_type)
+  //- meta(property="og:url" content=og_url)
+  //- meta(property="og:image" content=og_image)
 
   //------------------------------ Styles ------------------------------//
 
