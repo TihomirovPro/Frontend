@@ -1,5 +1,5 @@
 const ajaxFormSubmit = () => {
-  const forms = document.forms
+  const forms = document.querySelectorAll('form')
 
   forms.forEach(form => {
     form.addEventListener('submit', (e) => {
