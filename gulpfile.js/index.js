@@ -5,7 +5,6 @@ const { copyStaticFiles } = require('./static')
 const { buildMarkup } = require('./markup')
 const { buildStyles } = require('./styles')
 const { optimizeImages } = require('./images')
-const { upload, uploadMin } = require('./upload')
 
 // watchers
 function runWatchers (cb) {
@@ -52,10 +51,6 @@ exports.build = series(
   parallel(copyStaticFiles),
   parallel(buildStyles, buildMarkup, optimizeImages)
 )
-
-// upload task
-exports.upload = upload
-exports.uploadMin = uploadMin
 
 // clean task
 exports.clean = cleanDistFolder
