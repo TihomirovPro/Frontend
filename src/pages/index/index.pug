@@ -5,23 +5,30 @@ extends ../../layout/page
 block vars
   -
     const title = 'index'
-    //- const description = 'index'
+    const description = 'index'
     //- const keywords = 'index'
-    //- const pageClass = 'p-index'
+    const pageClass = 'p-index'
 
 //--------------------------------------------------//
 
 block head
   //- +style('aos')
-  //- +style('swiper')
+  +style('swiper')
   +style('index')
 
 block startBody
 
 block endBody
   //- +script('aos')
-  //- +script('swiper')
+  +script('swiper')
 
 //--------------------------------------------------//
 
 block content
+  .wrapper
+    .swiper
+      .swiper-wrapper
+        .swiper-slide 1
+        .swiper-slide 2
+        .swiper-slide 3
+        .swiper-slide 4
