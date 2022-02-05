@@ -1,6 +1,5 @@
 const { src, dest } = require('gulp')
-const sass = require('gulp-sass')
-sass.compiler = require('sass')
+const sass = require('gulp-sass')(require('sass'))
 const autoprefixer = require('gulp-autoprefixer')
 const combineMq = require('gulp-group-css-media-queries')
 const cleanCSS = require('gulp-clean-css')
