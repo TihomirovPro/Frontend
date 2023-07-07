@@ -52,7 +52,7 @@
     "node-notifier": "^8.0.2",
     "plop": "^2.5.4",
     "sass": "^1.37.5",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.10.1",
     "stylelint-order": "^4.1.0",
     "vinyl-ftp": "^0.6.1",
     "webpack": "^4.46.0",
